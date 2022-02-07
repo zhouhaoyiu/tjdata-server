@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class Vector {
 //    public Integer id;
+    public String userName;
     public String vectorName;
     public String geneName;
     public String geneSequence;

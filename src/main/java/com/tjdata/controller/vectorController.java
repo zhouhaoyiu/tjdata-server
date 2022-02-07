@@ -16,6 +16,7 @@ public class vectorController {
 
     @PostMapping("addVector")
     public Object addVector(@RequestBody Vector vectorInfo) {
+        String userName = vectorInfo.userName;
         String vectorName = vectorInfo.vectorName;
         String geneName = vectorInfo.geneName;
         String geneSequence = vectorInfo.geneSequence;
@@ -23,7 +24,7 @@ public class vectorController {
         String RES2 = vectorInfo.RES2;
         String description = vectorInfo.description;
 
-        int res = vectorMapper.addVector(vectorName,geneName,geneSequence,RES1,RES2,description);
+        int res = vectorMapper.addVector(userName,vectorName,geneName,geneSequence,RES1,RES2,description);
 
         return getObject(res, "载体");
     }
